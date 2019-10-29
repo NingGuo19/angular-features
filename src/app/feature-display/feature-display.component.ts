@@ -20,6 +20,7 @@ export class FeatureDisplayComponent implements OnInit {
     new Hero(20, 'Tornado')
   ];
   this.myHero = this.heroes[0];
+  //window.alert(this.myHero.name);
   }
 
   getVal(){
