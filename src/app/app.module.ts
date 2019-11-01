@@ -18,13 +18,13 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroesService } from './heroes/heroes.service';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule/*HttpClientInMemoryWebApiModule.forRoot(
+  imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {
         dataEncapsulation: false,
         passThruUnknownUrl: true,
         put204: false // return entity after PUT/update
       }
-    ) */],
+    ) ],
   declarations: [ AppComponent, HelloComponent, FeatureDisplayComponent, StudentDisplayComponent, ConfigComponent, HeroesComponent ],
   bootstrap:    [ AppComponent ],
   providers: [StudentService, ConfigService, InMemoryDataService, HeroesService]

@@ -5,14 +5,14 @@ import { HelloComponent } from './hello.component';
 import { FeatureDisplayComponent } from './feature-display/feature-display.component';
 import { StudentDisplayComponent } from './student-display/student-display.component';
 import { ConfigComponent } from './config/config.component';
-//import { HeroesComponent } from './heroes/heroes.component';
+import { HeroesComponent } from './heroes/heroes.component';
 
 const routes: Routes=[
   { path: 'hello', component: HelloComponent },
   { path: 'display', component: FeatureDisplayComponent },
   { path: 'student-display', component: StudentDisplayComponent },
-  { path: 'config', component: ConfigComponent }
-  //{ path: 'heroes', component: HeroesComponent }
+  { path: 'config', component: ConfigComponent },
+  { path: 'heroes', component: HeroesComponent }
 ]
 
 @NgModule({

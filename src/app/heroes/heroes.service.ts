@@ -20,11 +20,13 @@ export class HeroesService {
     this.configService.getConfig().subscribe(
       (data: Config)=>this.config={...data}
     );
+    //this.config = this.configService.getConfig();
+    window.alert(this.config);
   }
 
   getHeroes(): Observable<Hero[]>{
     this.getAPIUrl();
-    return this.http.get<Hero[]>(this.config.heroesUrl);
+    return this.http.get<Hero[]>("api/heroes");
   }
 
 }
