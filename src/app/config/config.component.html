@@ -1,0 +1,9 @@
+<p></p>
+<p>Get configuration from JSON file</p>
+<div>
+  <button (click)="clear(); showConfig()">get</button>
+  <span *ngIf="config">
+    <p>Heroes API URL is "{{config.heroesUrl}}"</p>
+    <p>Textfile URL is "{{config.textfile}}"</p>
+  </span>
+</div>
