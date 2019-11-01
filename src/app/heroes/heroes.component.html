@@ -1,1 +1,8 @@
-<p>Heroes is working</p>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a>
+      <span class="badge">{{ hero.id || -1 }}</span>
+      <span>{{hero.name}}</span>
+    </a>
+  </li>
+</ul>
