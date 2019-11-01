@@ -5,6 +5,8 @@
     <a>
       <span class="badge">{{ hero.id || -1 }}</span>
       <span>{{hero.name}}</span>
+      <button class="delete" title="delete hero" 
+      (click)="delete(hero)">x</button>
     </a>
   </li>
 </ul>
