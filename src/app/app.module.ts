@@ -14,7 +14,6 @@ import { StudentService } from './student.service';
 import { StudentDisplayComponent } from './student-display/student-display.component';
 import { ConfigService } from './config/config.service';
 import { ConfigComponent } from './config/config.component';
-import { HeoresComponent } from './heores/heores.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroesService } from './heroes/heroes.service';
 
@@ -26,7 +25,7 @@ import { HeroesService } from './heroes/heroes.service';
         put204: false // return entity after PUT/update
       }
     ) ],
-  declarations: [ AppComponent, HelloComponent, FeatureDisplayComponent, StudentDisplayComponent, ConfigComponent, HeoresComponent, HeroesComponent ],
+  declarations: [ AppComponent, HelloComponent, FeatureDisplayComponent, StudentDisplayComponent, ConfigComponent, HeroesComponent ],
   bootstrap:    [ AppComponent ],
   providers: [StudentService, ConfigService, InMemoryDataService, HeroesService]
 })
