@@ -16,6 +16,7 @@ import { ConfigService } from './config/config.service';
 import { ConfigComponent } from './config/config.component';
 import { HeoresComponent } from './heores/heores.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { HeroesService } from './heroes/heroes.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, HttpClientInMemoryWebApiModule.forRoot(
@@ -27,6 +28,6 @@ import { HeroesComponent } from './heroes/heroes.component';
     ) ],
   declarations: [ AppComponent, HelloComponent, FeatureDisplayComponent, StudentDisplayComponent, ConfigComponent, HeoresComponent, HeroesComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [StudentService, ConfigService, InMemoryDataService]
+  providers: [StudentService, ConfigService, InMemoryDataService, HeroesService]
 })
 export class AppModule { }
