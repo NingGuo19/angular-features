@@ -21,7 +21,7 @@ export class HeroesService {
       (data: Config)=>this.config={...data}
     );
     //this.config = this.configService.getConfig();
-    window.alert(this.config);
+    //window.alert(this.config);
   }
 
   getHeroes(): Observable<Hero[]>{
