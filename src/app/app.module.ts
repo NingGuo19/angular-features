@@ -18,6 +18,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroesService } from './heroes/heroes.service';
 import { HttpErrorHandlerService } from './http-error-handler.service';
 import { MessageService } from './message.service';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, HttpClientInMemoryWebApiModule.forRoot(
@@ -27,7 +28,7 @@ import { MessageService } from './message.service';
         put204: false // return entity after PUT/update
       }
     ) ],
-  declarations: [ AppComponent, HelloComponent, FeatureDisplayComponent, StudentDisplayComponent, ConfigComponent, HeroesComponent ],
+  declarations: [ AppComponent, HelloComponent, FeatureDisplayComponent, StudentDisplayComponent, ConfigComponent, HeroesComponent, MessagesComponent ],
   bootstrap:    [ AppComponent ],
   providers: [StudentService, ConfigService, InMemoryDataService, HeroesService, HttpErrorHandlerService, MessageService]
 })
