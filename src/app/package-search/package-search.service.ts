@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
-
+import { HttpErrorHandlerService, HandleError } from '../http-error-handler.service';
 
 export interface NpmPackageInfo {
   name: string;
@@ -16,9 +16,24 @@ const httpOptions = {
     'x-refresh':  'true'
   })
 };
+
+function createHttpOptions(packageName: string, refresh = false) {
+    // npm package name search api
+    // e.g., http://npmsearch.com/query?q=dom'
+    const params = new HttpParams({ fromObject: { q: packageName } });
+    const headerMap = refresh ? {'x-refresh': 'true'} : {};
+    const headers = new HttpHeaders(headerMap) ;
+    return { headers, params };
+}
+
 @Injectable()
 export class PackageSearchService {
 
-  constructor() { }
+  private handleError: HandleError;
+
+  constructor(private http: HttpClient,
+    httpErrorHandler: HttpErrorHandlerService) {
+      this.handleError = httpErrorHandler.createHandleError('Package Search Service');
+     }
 
 }
