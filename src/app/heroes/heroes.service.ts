@@ -58,5 +58,28 @@ export class HeroesService {
       );
   }
 
+  updateHero (hero: Hero): Observable<Hero> {
+    httpOptions.headers =
+      httpOptions.headers.set('Authorization', 'my-new-auth-token');
+
+    return this.http.put<Hero>(this.heroesUrl, hero, httpOptions)
+      .pipe(
+        catchError(this.handleError('updateHero', hero))
+      );
+  }
+
+  searchHeroes(term: string): Observable<Hero[]> {
+    term = term.trim();
+
+    // Add safe, URL encoded search parameter if there is a search term
+    const options = term ?
+     { params: new HttpParams().set('name', term) } : {};
+
+    return this.http.get<Hero[]>(this.heroesUrl, options)
+      .pipe(
+        catchError(this.handleError<Hero[]>('searchHeroes', []))
+      );
+  }
+
 
 }

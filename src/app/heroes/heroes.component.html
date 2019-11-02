@@ -14,9 +14,11 @@
 </div>
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
-    <a>
+    <a (click)="edit(hero)">
       <span class="badge">{{ hero.id || -1 }}</span>
-      <span>{{hero.name}}</span>
+      <span *ngIf="hero!==editHero">{{hero.name}}</span>
+      <input *ngIf="hero===editHero" [(ngModel)]="hero.name"
+        (blur)="update()" (keyup.enter)="update()">
       <button class="delete" title="delete hero" 
       (click)="delete(hero)">x</button>
     </a>

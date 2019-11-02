@@ -20,6 +20,7 @@ import { HttpErrorHandlerService } from './http-error-handler.service';
 import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
 import { httpInterceptorProviders } from './http-interceptors/index';
+import { RequestCacheService } from './request-cache.service';
 
 
 @NgModule({
@@ -32,6 +33,6 @@ import { httpInterceptorProviders } from './http-interceptors/index';
     ) ],
   declarations: [ AppComponent, HelloComponent, FeatureDisplayComponent, StudentDisplayComponent, ConfigComponent, HeroesComponent, MessagesComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [StudentService, ConfigService, InMemoryDataService, HeroesService, HttpErrorHandlerService, MessageService, httpInterceptorProviders]
+  providers: [StudentService, ConfigService, InMemoryDataService, HeroesService, HttpErrorHandlerService, MessageService, httpInterceptorProviders, RequestCacheService]
 })
 export class AppModule { }
