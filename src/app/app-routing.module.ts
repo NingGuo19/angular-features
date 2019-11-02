@@ -6,13 +6,15 @@ import { FeatureDisplayComponent } from './feature-display/feature-display.compo
 import { StudentDisplayComponent } from './student-display/student-display.component';
 import { ConfigComponent } from './config/config.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { PackageSearchComponent } from './package-search/package-search.component';
 
 const routes: Routes=[
   { path: 'hello', component: HelloComponent },
   { path: 'display', component: FeatureDisplayComponent },
   { path: 'student-display', component: StudentDisplayComponent },
   { path: 'config', component: ConfigComponent },
-  { path: 'heroes', component: HeroesComponent }
+  { path: 'heroes', component: HeroesComponent },
+  { path: 'package', component: PackageSearchComponent }
 ]
 
 @NgModule({
