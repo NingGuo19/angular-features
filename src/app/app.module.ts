@@ -25,6 +25,7 @@ import { httpInterceptorProviders } from './http-interceptors/index';
 import { RequestCacheService, RequestCache } from './request-cache.service';
 import { PackageSearchComponent } from './package-search/package-search.component';
 import { PackageSearchService } from './package-search/package-search.service';
+import { UploaderComponent } from './uploader/uploader.component';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import { PackageSearchService } from './package-search/package-search.service';
       headerName: 'My-Xsrf-Header',
     }),
      ],
-  declarations: [ AppComponent, HelloComponent, FeatureDisplayComponent, StudentDisplayComponent, ConfigComponent, HeroesComponent, MessagesComponent, PackageSearchComponent ],
+  declarations: [ AppComponent, HelloComponent, FeatureDisplayComponent, StudentDisplayComponent, ConfigComponent, HeroesComponent, MessagesComponent, PackageSearchComponent, UploaderComponent ],
   bootstrap:    [ AppComponent ],
   providers: [StudentService, ConfigService, InMemoryDataService, HeroesService, HttpErrorHandlerService, MessageService, httpInterceptorProviders, { provide: RequestCache, useClass: RequestCacheService }, PackageSearchService]
 })

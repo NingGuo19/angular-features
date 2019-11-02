@@ -7,6 +7,7 @@ import { StudentDisplayComponent } from './student-display/student-display.compo
 import { ConfigComponent } from './config/config.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { PackageSearchComponent } from './package-search/package-search.component';
+import { UploaderComponent } from './uploader/uploader.component';
 
 const routes: Routes=[
   { path: 'hello', component: HelloComponent },
@@ -14,7 +15,8 @@ const routes: Routes=[
   { path: 'student-display', component: StudentDisplayComponent },
   { path: 'config', component: ConfigComponent },
   { path: 'heroes', component: HeroesComponent },
-  { path: 'package', component: PackageSearchComponent }
+  { path: 'package', component: PackageSearchComponent },
+  { path: 'uploader', component: UploaderComponent }
 ]
 
 @NgModule({
