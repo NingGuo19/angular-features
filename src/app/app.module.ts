@@ -19,6 +19,8 @@ import { HeroesService } from './heroes/heroes.service';
 import { HttpErrorHandlerService } from './http-error-handler.service';
 import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
+import { httpInterceptorProviders } from './http-interceptors/index';
+
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule, HttpClientInMemoryWebApiModule.forRoot(
@@ -30,6 +32,6 @@ import { MessagesComponent } from './messages/messages.component';
     ) ],
   declarations: [ AppComponent, HelloComponent, FeatureDisplayComponent, StudentDisplayComponent, ConfigComponent, HeroesComponent, MessagesComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [StudentService, ConfigService, InMemoryDataService, HeroesService, HttpErrorHandlerService, MessageService]
+  providers: [StudentService, ConfigService, InMemoryDataService, HeroesService, HttpErrorHandlerService, MessageService, httpInterceptorProviders]
 })
 export class AppModule { }

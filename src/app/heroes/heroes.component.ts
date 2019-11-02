@@ -20,6 +20,7 @@ const httpOptions = {
 export class HeroesComponent implements OnInit {
 
   heroes: Hero[];
+  editHero: Hero; 
 
   constructor(private heroesservice: HeroesService) { }
 
@@ -38,7 +39,17 @@ export class HeroesComponent implements OnInit {
       .subscribe();
   }
 
+  add( name: string ){
+    this.editHero = undefined;
+    name = name.trim();
+    if (!name) {
+      return;
+    }
 
-
-
+    // The server will generate the id for this new hero
+    const newHero: Hero = { name } as Hero;
+    this.heroesservice
+      .addHero(newHero)
+      .subscribe(hero => this.heroes.push(hero));
+  }
 }
