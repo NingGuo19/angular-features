@@ -26,6 +26,7 @@ import { RequestCacheService, RequestCache } from './request-cache.service';
 import { PackageSearchComponent } from './package-search/package-search.component';
 import { PackageSearchService } from './package-search/package-search.service';
 import { UploaderComponent } from './uploader/uploader.component';
+import { UploaderService } from './uploader/uploader.service';
 
 
 @NgModule({
@@ -45,6 +46,6 @@ import { UploaderComponent } from './uploader/uploader.component';
      ],
   declarations: [ AppComponent, HelloComponent, FeatureDisplayComponent, StudentDisplayComponent, ConfigComponent, HeroesComponent, MessagesComponent, PackageSearchComponent, UploaderComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [StudentService, ConfigService, InMemoryDataService, HeroesService, HttpErrorHandlerService, MessageService, httpInterceptorProviders, { provide: RequestCache, useClass: RequestCacheService }, PackageSearchService]
+  providers: [StudentService, ConfigService, InMemoryDataService, HeroesService, HttpErrorHandlerService, MessageService, httpInterceptorProviders, { provide: RequestCache, useClass: RequestCacheService }, PackageSearchService, UploaderService]
 })
 export class AppModule { }
