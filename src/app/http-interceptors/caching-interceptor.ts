@@ -14,8 +14,21 @@ export class CachingInterceptor implements HttpInterceptor{
 
     constructor(private cache: RequestCache) {}
     intercept(req: HttpRequest<any>, next: HttpHandler){
+// continue if not cachable.
+    if (!isCachable(req)) { return next.handle(req); }
 
-        return undefined;
+    const cachedResponse = this.cache.get(req);
+    // cache-then-refresh
+    if (req.headers.get('x-refresh')) {
+      const results$ = sendRequest(req, next, this.cache);
+      return cachedResponse ?
+        results$.pipe( startWith(cachedResponse) ) :
+        results$;
+    }
+    // cache-or-fetch
+    return cachedResponse ?
+      of(cachedResponse) : sendRequest(req, next, this.cache);
+  
 
     }
 }

@@ -22,7 +22,7 @@ import { HttpErrorHandlerService } from './http-error-handler.service';
 import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
 import { httpInterceptorProviders } from './http-interceptors/index';
-import { RequestCacheService } from './request-cache.service';
+import { RequestCacheService, RequestCache } from './request-cache.service';
 import { PackageSearchComponent } from './package-search/package-search.component';
 import { PackageSearchService } from './package-search/package-search.service';
 
@@ -44,6 +44,6 @@ import { PackageSearchService } from './package-search/package-search.service';
      ],
   declarations: [ AppComponent, HelloComponent, FeatureDisplayComponent, StudentDisplayComponent, ConfigComponent, HeroesComponent, MessagesComponent, PackageSearchComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [StudentService, ConfigService, InMemoryDataService, HeroesService, HttpErrorHandlerService, MessageService, httpInterceptorProviders, RequestCacheService, PackageSearchService]
+  providers: [StudentService, ConfigService, InMemoryDataService, HeroesService, HttpErrorHandlerService, MessageService, httpInterceptorProviders, { provide: RequestCache, useClass: RequestCacheService }, PackageSearchService]
 })
 export class AppModule { }
